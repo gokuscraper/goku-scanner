@@ -1,16 +1,20 @@
-# 🐒 悟空雷达 (Wukong Radar)
+# 🐒 悟空局域网侦探 (Goku Scanner)
 
 > **让局域网设备无所遁形的 AI 智能扫描器**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
+
+[🇺🇸 English Version](README_EN.md)
 
 ---
 
 ## 📖 项目简介
 
 **悟空雷达**是一款基于 Python + NiceGUI 开发的智能局域网扫描工具，融合了传统网络探测技术与 AI 深度学习分析，能够快速发现、识别和分析局域网内的所有联网设备。
+
+![image-20260516055417160](https://asiaassets.gokuscraper.com/images/2026/05/16/3f80fe6171affd1e.webp)
 
 ### ✨ 核心特色
 
@@ -34,7 +38,6 @@
 - ✅ **MAC识别** - SendARP + ARP表查询，自动匹配厂商
 - ✅ **设备分类** - 智能识别路由器、手机、电脑、IoT设备等
 - ✅ **Web抓取** - 自动提取HTTP页面标题
-- ✅ **历史记录** - 保存设备上线时间，支持备注管理
 
 ### 2️⃣ AI 深度模式（悟空侦探）
 
@@ -44,7 +47,6 @@
 - 📊 **全网报告** - 生成《局域网全盘安全与资产审计报告》
 - 💡 **抓鬼指南** - 提供实操技术手段逼出隐藏设备
 - 🎯 **隐私识别** - 精准识别随机MAC的智能手机
-- ⚡ **休眠分析** - 解释高延迟设备的省电模式状态
 
 **支持的AI提供商：**
 - [智谱AI (GLM)](https://open.bigmodel.cn/) - 国产大模型，中文理解优秀
@@ -90,7 +92,7 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/yourusername/wukong-radar.git
+git clone https://github.com/gokuscraper/goku-scanner.git
 cd wukong-radar
 
 # 2. 创建虚拟环境
@@ -108,7 +110,7 @@ python main.py
 
 首次使用时，点击右上角"设置"按钮：
 
-1. **智谱AI** - 注册 [智谱开放平台](https://open.bigmodel.cn/) 获取API Key
+1. **智谱AI** - 注册 [智谱开放平台](https://www.bigmodel.cn/invite?icode=Ejyge8QfoYB7jR0pVOFW7mczbXFgPRGIalpycrEwJ28%3D) 获取API Key
 2. **Groq** - 注册 [Groq Cloud](https://console.groq.com/) 获取API Key
 
 **不配置也可以使用标准扫描模式！**
@@ -118,42 +120,22 @@ python main.py
 ## 📸 界面预览
 
 ### 主界面
-```
-┌─────────────────────────────────────────────┐
-│  🐒 悟空雷达    [搜索框]  [设备列表] [拓扑] │
-│                                             │
-│  ┌───────────────────────────────────────┐  │
-│  │  扫描网段: 192.168.0.0/24             │  │
-│  │  [标准模式] [AI深度模式]              │  │
-│  │  [开始扫描]                           │  │
-│  └───────────────────────────────────────┘  │
-│                                             │
-│  设备列表 (5台在线):                        │
-│  ├─ 192.168.0.1     路由器      在线 🟢    │
-│  ├─ 192.168.0.100   Windows PC   在线 🟢    │
-│  ├─ 192.168.0.101   iPhone       在线 🟢    │
-│  └─ ...                                     │
-└─────────────────────────────────────────────┘
-```
+![image-20260516055824001](https://asiaassets.gokuscraper.com/images/2026/05/16/8076e0e60f58cd2f.webp)
 
 ### AI深度报告示例
 
+![image-20260516060343012](https://asiaassets.gokuscraper.com/images/2026/05/16/efa5145bad83cc0f.webp)
+
 ```markdown
-# 🎯 侦探身份侧写
+🌐 1. 【全网生态大盘综述】
+当前内网呈现典型的家庭或小型工作室生态。全网共发现 4 台存活资产，其中 2 台为 Windows 设备，占总数的 50%；1 台为 Web 管理设备（路由器），另外 1 台为未知移动设备（疑似）。网络边界由一台 TP-Link 骨干路由（TL-XDR3010）控制，开放了 80 和 1900 端口。整体而言，Windows 设备和匿名移动终端各占一半，路由器是网络的核心枢纽。
 
-**设备 IP**: 192.168.0.101  
-**推断结果**: 这 100% 是一台开启了随机 MAC 隐私保护的 iPhone 14 Pro
+🕵️‍♂️ 2. 【异常群落与'隐形资产'穿透】
+在全网资产中，.101 设备表现异常。该设备 MAC 地址前缀未知，设备类型为未知移动设备（疑似），且没有任何开放端口。这种特征通常与移动设备或 IoT 设备相关，可能是息屏状态的手机或智能家居设备。结合 .101 的高延迟（150.78 毫秒）和全封闭的网络行为，可以推测该设备可能是一台处于挂机或息屏状态的移动终端，共享了网络带宽，但未留下明确的数字指纹。
 
-**推理依据**:
-- MAC地址第二位是 `a` (0x0A)，符合苹果随机MAC规范
-- 全端口封闭，说明处于息屏休眠状态
-- 延迟 48ms，证明刚被我们的扫描从省电模式打醒
-
-# 🕵️‍♂️ 悟空抓鬼行动指南
-
-1. **点亮屏幕法**: 拿起这台iPhone，解锁屏幕后重新扫描，它会立即释放主机名 "iPhone-张三"
-2. **AirDrop探测**: 在同一网络下打开AirDrop，看是否能发现这个设备
-3. **路由器对账**: 登录路由器后台，查看DHCP租约列表，匹配MAC地址 `5a:8f:aa:8e:bd:92`
+⚔️ 3. 【内网火线防御建议（Top 2）】
+- **高危端口暴露风险**：.100 和 .102 两台 Windows 设备均开放了 135 端口（RPC/SMB），这是一个高风险端口，可能被用于横向移动和远程代码执行攻击。如果其中一台设备被攻陷，攻击者可以利用 135 端口进一步渗透内网其他设备。因此，强烈建议关闭或限制 135 端口的访问，仅允许必要的服务和 IP 地址段访问。
+- **UPnP 协议风险**：路由器（.1）开放了 1900 端口（UPnP），这可能被用于局域网内的设备发现和投屏服务。然而，UPnP 协议如果配置不当，可能被攻击者利用进行流量劫持或设备入侵。建议在路由器上限制 UPnP 服务，仅允许可信设备使用，或考虑关闭该功能以增强安全。
 ```
 
 ---
@@ -170,13 +152,6 @@ python main.py
 | **网络探测** | 原生socket + subprocess | 高性能并发扫描 |
 | **数据持久化** | JSON文件 | 轻量级本地存储 |
 | **加密存储** | Windows DPAPI | 系统级密钥保护 |
-
-### 性能优化
-
-- ✅ **32线程并发** - 平衡速度与资源占用
-- ✅ **智能超时** - Ping 250ms，端口200ms，DNS/NetBIOS已禁用
-- ✅ **缓存机制** - MAC厂商数据库LRU缓存
-- ✅ **异步处理** - asyncio + ThreadPoolExecutor混合架构
 
 ### 扫描流程
 
@@ -197,17 +172,7 @@ python main.py
 如果是AI深度模式 → 调用LLM分析 → 弹窗显示报告
 ```
 
----
-
-## 📊 性能对比
-
-| 指标 | 数值 | 说明 |
-|------|------|------|
-| **扫描速度** | 4.17秒 | 254个IP，发现5台设备 |
-| **内存占用** | ~250MB | 运行时峰值 |
-| **打包体积** | ~90MB | 包含所有依赖 |
-| **启动时间** | 3-5秒 | 首次启动（含杀毒扫描） |
-| **CPU占用** | <5% | 扫描完成后 |
+## 
 
 ---
 
@@ -220,25 +185,9 @@ python main.py
 - ✅ **开源透明** - 代码完全公开，无后门风险
 - ✅ **最小权限** - 无需管理员权限即可运行
 
-### `.gitignore` 保护
-
-以下敏感文件已被Git忽略：
-
-```
-.zhipu_api_key          # 智谱API密钥（加密）
-.groq_api_key           # Groq API密钥（加密）
-data/devices.json       # 设备历史记录（含内网IP）
-framework_settings.json # 配置文件
-downloads/              # 导出文件
-```
-
 ---
 
 ## ❓ 常见问题
-
-### Q1: 为什么最后几个IP扫描特别慢？
-
-**答**: 这是正常现象。离线设备需要等待Ping超时（250ms），当大部分IP都离线时，最后一批会显得较慢。实际总耗时仅4秒左右。
 
 ### Q2: AI分析失败怎么办？
 
@@ -266,33 +215,10 @@ downloads/              # 导出文件
 ### Q6: 杀毒软件报毒怎么办？
 
 **答**: PyInstaller打包的程序可能被误报。解决方法：
+
 1. 将程序添加到杀毒软件白名单
 2. 从源码运行（不会被误报）
 3. 提交误报到杀毒软件厂商
-
----
-
-## 📦 打包发布
-
-### PyInstaller 打包
-
-```bash
-# 1. 安装 PyInstaller
-pip install pyinstaller
-
-# 2. 执行打包
-python -m PyInstaller --clean build.spec
-
-# 3. 输出位置
-dist/悟空局域网侦探/
-```
-
-### 打包配置
-
-- **模式**: `--onedir` (单文件夹分发)
-- **控制台**: `--console` (保留调试窗口)
-- **图标**: `app.ico` (自定义程序图标)
-- **资源**: 包含所有图片、数据库、配置文件
 
 ---
 
@@ -323,29 +249,6 @@ dist/悟空局域网侦探/
 
 欢迎提交 Issue 和 Pull Request！
 
-### 开发环境搭建
-
-```bash
-# 1. Fork 本仓库
-# 2. 克隆到本地
-git clone https://github.com/yourusername/wukong-radar.git
-
-# 3. 创建分支
-git checkout -b feature/your-feature
-
-# 4. 提交代码
-git commit -m "Add: 新功能描述"
-git push origin feature/your-feature
-
-# 5. 发起 PR
-```
-
-### 代码规范
-
-- 遵循 PEP 8 风格
-- 函数和类添加文档字符串
-- 保持向后兼容性
-
 ---
 
 ## 📞 技术支持
@@ -354,27 +257,19 @@ git push origin feature/your-feature
 
 扫码加入微信交流群，获取最新资讯和技术支持：
 
-![交流群二维码](gzh.jpg)
+![交流群二维码](https://asiaassets.gokuscraper.com/images/2026/05/16/20f9855b37f18dd3.webp)
 
 ### 反馈渠道
 
-- 🐛 [GitHub Issues](https://github.com/yourusername/wukong-radar/issues)
-- 📧 Email: your-email@example.com
+- 🐛 [GitHub Issues](https://github.com/gokuscraper/goku-scanner/issues)
+- 📧 Email: contact@gokuscraper.com
 - 💬 微信群：扫码上方二维码
 
 ---
 
 ## 📄 许可证
 
-本项目采用 [MIT License](LICENSE) 开源协议。
-
-```
-MIT License
-
-Copyright (c) 2026 Wukong Radar
-
-Permission is hereby granted...
-```
+本项目采用 [Apache License 2.0](LICENSE) 开源协议。
 
 ---
 
@@ -385,8 +280,6 @@ Permission is hereby granted...
 - [NiceGUI](https://nicegui.io/) - 优雅的Python Web UI框架
 - [pywebview](https://pywebview.flowrl.com/) - 轻量级桌面应用容器
 - [mac-vendor-lookup](https://pypi.org/project/mac-vendor-lookup/) - MAC地址厂商查询
-- [智谱AI](https://open.bigmodel.cn/) - 国产大语言模型
-- [Groq](https://groq.com/) - 超高速AI推理平台
 
 ---
 
@@ -396,4 +289,4 @@ Permission is hereby granted...
 
 ---
 
-**Made with ❤️ by Wukong Radar Team**
+**Made with ❤️ by GokuScraper**
